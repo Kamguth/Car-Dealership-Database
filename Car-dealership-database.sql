@@ -143,10 +143,17 @@ INSERT INTO Inventory (dealership_id, VIN) VALUES
 (4, '34719'),
 (4, '90812'),
 (4, '12784');
-
+-- Forgot to add 2 cars
 INSERT INTO Inventory (dealership_id, VIN) VALUES
 (3, '96453'),
 (4, '76342');
+
+INSERT INTO Vehicles (VIN, year, make, model, type, color, mileage, price)
+VALUES ('99999', 2023, 'Ford', 'Mustang', 'Car', 'Red', 10000, 32000.00);
+
+INSERT INTO Inventory (dealership_id, VIN)
+VALUES (1, '99999');
+
 
 
 
