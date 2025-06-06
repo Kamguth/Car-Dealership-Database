@@ -94,6 +94,63 @@ VALUES
 ('76342', 2017, 'Chevrolet', 'Equinox', 'SUV', 'White', 83000, 17800.00);
 
 
+INSERT INTO SalesContracts (
+    VIN, sale_date, customer_name, customer_email,
+    year, make, model, type, color, mileage,
+    price, sales_tax, fees, total_price, is_financed, monthly_payment
+) VALUES
+('11152', '2025-03-21', 'Alex Mason', 'alex.mason@example.com', 2021, 'Ford', 'Fusion', 'SUV', 'RED', 32930, 11905.08, 595.25, 295.00, 12795.33, TRUE, 213.26),
+('63067', '2025-05-31', 'Jamie Reed', 'jamie.reed@example.com', 2022, 'Honda', 'Pilot', 'Coupe', 'WHITE', 42852, 43452.86, 2172.64, 150.00, 45775.50, TRUE, 762.92),
+('76434', '2025-04-24', 'Taylor Brooks', 'taylor.brooks@example.com', 2017, 'Honda', 'Pilot', 'SUV', 'YELLOW', 178551, 32037.51, 1601.88, 295.00, 33934.39, TRUE, 565.57),
+('89321', '2024-11-16', 'Morgan Lane', 'morgan.lane@example.com', 2018, 'Toyota', 'Camry', 'Sedan', 'Black', 61200, 17800.00, 890.00, 150.00, 18840.00, TRUE, 314.00),
+('58291', '2024-12-05', 'Jordan Rivers', 'jordan.rivers@example.com', 2020, 'Nissan', 'Altima', 'Sedan', 'Silver', 38900, 19300.50, 965.03, 295.00, 20560.53, TRUE, 342.68);
+
+
+INSERT INTO LeaseContracts (
+    VIN, lease_date, customer_name, customer_email,
+    year, make, model, type, color,
+    price, expected_value, lease_fee, total_lease_price, monthly_payment
+) VALUES
+('47913', '2024-09-13', 'Avery Scott', 'avery.scott@example.com', 2023, 'Chevrolet', 'Malibu', 'Sedan', 'Blue', 25100.00, 12550.00, 1757.00, 14307.00, 596.13),
+('71236', '2024-04-18', 'Riley James', 'riley.james@example.com', 2019, 'Jeep', 'Cherokee', 'SUV', 'Green', 20900.99, 10450.50, 1463.07, 11913.57, 496.40),
+('31846', '2024-06-04', 'Casey Drew', 'casey.drew@example.com', 2021, 'Ford', 'Escape', 'SUV', 'White', 27495.75, 13747.88, 1924.70, 15672.58, 653.02),
+('27461', '2024-01-26', 'Skyler Hayes', 'skyler.hayes@example.com', 2022, 'Kia', 'Sorento', 'SUV', 'Gray', 28150.00, 14075.00, 1970.50, 16045.50, 668.56),
+('58472', '2024-07-02', 'Peyton Blake', 'peyton.blake@example.com', 2020, 'Hyundai', 'Elantra', 'Sedan', 'Red', 16800.00, 8400.00, 1176.00, 9576.00, 399.00);
+
+
+INSERT INTO Dealerships (name, address, phone) VALUES
+('Super Cars Inc.', '123 Auto Lane, Springfield', '555-1234'),
+('City Motors', '456 Main St, Springfield', '555-5678'),
+('Luxury Rides', '789 Oak Ave, Springfield', '555-8765'),
+('Affordable Autos', '101 Market St, Springfield', '555-4321');
+
+
+
+INSERT INTO Inventory (dealership_id, VIN) VALUES
+(1, '11152'),
+(1, '63067'),
+(1, '76434'),
+(1, '89321'),
+(2, '58291'),
+(2, '47913'),
+(2, '71236'),
+(2, '31846'),
+(3, '27461'),
+(3, '58472'),
+(3, '61549'),
+(3, '14327'),
+(4, '83265'),
+(4, '34719'),
+(4, '90812'),
+(4, '12784');
+
+INSERT INTO Inventory (dealership_id, VIN) VALUES
+(3, '96453'),
+(4, '76342');
+
+
+
+
 
 
 
