@@ -52,7 +52,6 @@ CREATE TABLE SalesContracts (
     FOREIGN KEY (VIN) REFERENCES Vehicles(VIN)
 );
 
-
 CREATE TABLE LeaseContracts (
     lease_id INT AUTO_INCREMENT PRIMARY KEY,
     VIN VARCHAR(17),
@@ -68,8 +67,7 @@ CREATE TABLE LeaseContracts (
     expected_value DECIMAL(10,2),
     lease_fee DECIMAL(10,2),
     total_lease_price DECIMAL(10,2),
-    monthly_payment DECIMAL(10,2),
-    FOREIGN KEY (VIN) REFERENCES Vehicles(VIN)
+    monthly_payment DECIMAL(10,2)
 );
 
 INSERT INTO Vehicles (VIN, year, make, model, type, color, mileage, price)
@@ -153,6 +151,20 @@ VALUES ('99999', 2023, 'Ford', 'Mustang', 'Car', 'Red', 10000, 32000.00);
 
 INSERT INTO Inventory (dealership_id, VIN)
 VALUES (1, '99999');
+
+-- SalesContracts VIN foreign key fix
+ALTER TABLE SalesContracts DROP FOREIGN KEY salescontracts_ibfk_1;
+
+ALTER TABLE SalesContracts 
+ADD CONSTRAINT salescontracts_ibfk_1 
+FOREIGN KEY (VIN) REFERENCES Vehicles(VIN) ON DELETE CASCADE;
+
+-- LeaseContracts VIN foreign key fix
+ALTER TABLE LeaseContracts DROP FOREIGN KEY leasecontracts_ibfk_1;
+
+ALTER TABLE LeaseContracts 
+ADD CONSTRAINT leasecontracts_ibfk_1 
+FOREIGN KEY (VIN) REFERENCES Vehicles(VIN) ON DELETE CASCADE;
 
 
 
